@@ -1,6 +1,10 @@
 const database = require("../main/datbase");
 
 module.exports = {
+    calculateCount,
+    makeReceipt,
+    makeReceiptSum,
+    buildSingleItem,
     printInventory
 };
 
@@ -120,5 +124,3 @@ ${sale}----------------------
 节省：${save.toFixed(2)}(元)
 **********************`);
 }
-
-

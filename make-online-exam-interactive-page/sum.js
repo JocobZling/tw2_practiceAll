@@ -8,6 +8,7 @@ function getAnswer() {
     let tiankong1 = document.getElementsByName("0")[0].value;
     result.push(tiankong1);
     let tiankong2 = [];
+
     document.getElementsByName("1").forEach(item => {
         tiankong2.push(item.value);
     });
@@ -27,7 +28,9 @@ function getAnswer() {
     result.push(singleAnswer(panduan1));
     let panduan2 = document.getElementsByName("panduan2");
     result.push(singleAnswer(panduan2));
+
     result.push(document.getElementsByName(5)[0].value);
+
     console.log(result);
     return result;
 }
