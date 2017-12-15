@@ -19,6 +19,11 @@
   "homepage": "https://school.thoughtworks.cn",
   "devDependencies": {
     "jasmine": "^2.6.0",
-    "sinon": "^2.3.5"
+    "sinon": "^2.3.5",
+    "redline": "^1.0.1",
+    "readline-sync": "^1.4.7"
+  },
+  "dependencies": {
+    "iconv-lite": "^0.4.19"
   }
 }

@@ -8,4 +8,7 @@ function split_to_zero(number, interval) {
   }
   return result;
 }
+var result = split_to_zero(0.8, 0.2);
+console.log(result);
+
 module.exports = split_to_zero;

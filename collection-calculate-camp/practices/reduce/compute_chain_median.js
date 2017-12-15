@@ -7,7 +7,7 @@ function compute_chain_median(collection) {
     return (parseInt(ascRank[arr.length / 2]) + parseInt(ascRank[arr.length / 2 - 1])) / 2;
   }
   else {
-   return  parseInt(ascRank[Math.ceil(ascRank.length / 2)]);//上舍入
+   return  parseInt(ascRank[Math.floor(ascRank.length / 2)]);//上舍入
   }
 }
 

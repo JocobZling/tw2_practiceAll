@@ -4,7 +4,7 @@ function grouping_count(collection) {
   let result = {};
   collection.forEach(ele => {
     if (result[ele.toString()]) {
-      ++result[ele.toString()];
+      ++result[ele.toString()];//某一个对象的value值
     } else {
       result[ele.toString()] = 1;
     }
