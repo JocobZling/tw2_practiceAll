@@ -1,53 +1,36 @@
-import Person from "./person.js";
-
-class Teacher extends Person {
-    constructor(id, name, age, klasses) {
-        super(id, name, age);
-        this.klasses = klasses;
-        for (let klass of klasses) {
-            klass.teathers.push(this);
-        }
+import Person from "./person.js"
+class Teacher extends Person{
+    constructor(id,name,age,classes) {
+        super(id,name,age);
+        this.classes = classes;
     }
 
-    introduce() {
-        let klassesSum = new String();
-        let result = new String();
-        for (let index = 0; index < this.klasses.length; index++) {
-            if (index === this.klasses.length - 1)
-                klassesSum += this.klasses[index].number;
-            else
-                klassesSum += this.klasses[index].number + ', ';
-        }
-        if (this.klasses.length === 0)
-            result = super.introduce() + ' I am a Teacher. I teach No Class.';
-        else {
-            result = super.introduce() + ` I am a Teacher. I teach Class ${klassesSum}.`;
+    introduce(){
+        let res = super.introduce()+` I am a Teacher. `;
+        let str = "";
 
+        if(typeof(this.classes) === 'undefined')
+            res += `I teach No Class.`;
+        else{
+            this.classes.forEach((item,index,inputs) =>{
+                if(index !== inputs.length-1)
+                    str+=` ${item.number},`;
+                else
+                    str+=` ${item.number}`;
+            });
+            res += `I teach Class${str}.`;
         }
-        return result;
+        return res;
     }
 
-    introduceWith(Student) {
-        for (let a of this.klasses) {
-            if (Student.klass === a.number) {
-                return "My name is " + this.name + ". I am " + this.age + " years old. I am a Teacher. I teach "
-                    + Student.name + ".";
-            }
-            else {
-                return "My name is " + this.name + ". I am " + this.age + " years old. I am a Teacher. I don't " +
-                    "teach " + Student.name + ".";
-            }
-        }
-
-    }
-
-    isTeaching(Student) {
-        for (let klass of this.klasses) {
-            if (klass.isIn(Student))
-                return true;
-        }
+    isTeaching(student){
+        this.classes.forEach(item => {
+             if(item.isIn(student))
+                 return true;
+        });
         return false;
     }
 }
 
-module.exports = Teacher;
+exports["default"] = Teacher;
+module.exports = exports["default"];

@@ -1,12 +1,16 @@
-class Class {
-    constructor(number) {
+class Class{
+    constructor (number){
         this.number = number;
-        this.leader = "";
     }
 
-    assignLeader(Student) {
-        this.leader = Student.name;
+    getDisplayName(){
+        return `Class ${this.number}`;
+    }
+
+    assignLeader(student){
+        if(student.className.number === this.number)
+              this.leader = student;
     }
 }
-
-module.exports = Class;
+exports["default"] = Class;
+module.exports = exports["default"];

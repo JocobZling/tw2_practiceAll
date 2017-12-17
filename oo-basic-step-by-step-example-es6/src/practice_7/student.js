@@ -1,15 +1,20 @@
 import Person from "./person.js";
 
-class Student extends Person {
-    constructor(name, age, klass) {
-        super(name, age);
-        this.klass = klass;
+class Student extends Person{
+    constructor(name,age,className) {
+        super(name,age);
+        this.className = className;
     }
 
-    introduce() {
-        return super.introduce() + " I am a Student. I am at Class " + this.klass + ".";
+    introduce(){
+        let personStr = super.introduce();
+        return `${personStr} I am a Student. I am at Class ${this.className.number}.`;
     }
-
 }
+exports["default"] = Student;
+module.exports = exports["default"];
 
-module.exports = Student;
+
+
+
+

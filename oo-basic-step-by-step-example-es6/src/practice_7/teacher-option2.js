@@ -1,31 +1,32 @@
-import Person from "./person.js";
-
-class Teacher extends Person {
-    constructor(name, age, klass) {
-        super(name, age);
-        this.klass = klass;
+import Person from "./person.js"
+class Teacher extends Person{
+    constructor(name,age,className) {
+        super(name,age);
+        this.className = className;
     }
 
-    introduce() {
-        if (this.klass == null) {
-            return super.introduce() + " I am a Teacher. I teach No Class.";
-        }
-        else {
-            return super.introduce() + ` I am a Teacher. I teach Class ${this.klass.toString()}.`;
-        }
+    introduce(){
+        let res = super.introduce();
+
+        if(typeof this.className === 'undefined')
+            res += ` I am a Teacher. I teach No Class.`;
+        else
+            res += ` I am a Teacher. I teach Class ${this.className.number}.`;
+
+        return res;
     }
 
-    introduceWith(Student) {
-        if (Student.klass === this.klass) {
-            return "My name is " + this.name + ". I am " + this.age + " years old. I am a Teacher. I teach "
-                + Student.name + ".";
-        }
-        else {
-            return "My name is " + this.name + ". I am " + this.age + " years old. I am a Teacher. I don't " +
-                "teach " + Student.name + ".";
-        }
-
+    introduceWith(student){
+        let res = super.introduce() + ` I am a Teacher. `;
+        if(student.className.number === this.className.number)
+            res+=`I teach ${student.name}.`;
+        else
+            res+=`I don't teach ${student.name}.`;
+        return res;
     }
 }
 
-module.exports = Teacher;
+exports["default"] = Teacher;
+module.exports = exports["default"];
+
+

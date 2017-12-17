@@ -1,36 +1,38 @@
-class Class {
-    constructor(number) {
+class Class{
+    constructor (number){
         this.number = number;
-        this.leader = "";
-        this.teathers = [];
     }
 
-    assignLeader(Student) {
-        if (Student.klass === this.number) {
-            this.leader = Student.name;
-            for (let teather of this.teathers) {
-                teather.print(Student.name, this.number, 'leader');
-            }
-        }
-        else {
-            console.log('It is not one of us.');
-        }
+    getDisplayName(){
+        return `Class ${this.number}`;
     }
 
-    appendMember(Student) {
-        Student.klass = this.number;
-        Student.inClass = this;
-        for (let teather of this.teathers) {
-            teather.print(Student.name, this.number, 'join');
+    assignLeader(student,teacher){
+        if(student.className.number === this.number){
+            this.leader = student;
+            if(typeof(teacher)!== 'undefined')
+                  teacher.registerAssignLeaderListener(student);
         }
+        else
+            console.log("It is not one of us.");
     }
 
-    isIn(Student) {
-        if (Student.klass === this.number)
+    appendMember(student,teacher){
+        student.className = this;
+        if(typeof(teacher)!== 'undefined')
+             teacher.registerJoinListener(student);
+    }
+
+    isIn(student)
+    {
+        if(student.className.number === this.number)
             return true;
         else
             return false;
     }
 }
+exports["default"] = Class;
+module.exports = exports["default"];
 
-module.exports = Class;
+
+

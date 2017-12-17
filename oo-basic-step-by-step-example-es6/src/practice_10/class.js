@@ -1,30 +1,32 @@
-class Class {
-    constructor(number) {
+class Class{
+    constructor (number){
         this.number = number;
-        this.leader = "";
-        this.teathers = [];
     }
 
-    assignLeader(Student) {
-        if (Student.klass === this.number) {
-            this.leader = Student.name;
-        }
-        else {
-            console.log('It is not one of us.');
-        }
+    getDisplayName(){
+        return `Class ${this.number}`;
     }
 
-    appendMember(Student) {
-        Student.klass = this.number;
-        Student.inClass = this;
+    assignLeader(student){
+        if(student.className.number === this.number)
+            this.leader = student;
+        else
+            console.log("It is not one of us.");
     }
 
-    isIn(student) {
-        if (student.klass === this.number)
+    appendMember(student){
+        student.className = this;
+    }
+
+    isIn(student)
+    {
+        if(student.className.number === this.number)
             return true;
         else
             return false;
     }
 }
+exports["default"] = Class;
+module.exports = exports["default"];
 
-module.exports = Class;
+

@@ -1,7 +1,11 @@
-class Class {
-    constructor(number) {
+class Class{
+    constructor (number){
         this.number = number;
     }
-}
 
-module.exports = Class;
+    getDisplayName(){
+        return `Class ${this.number}`;
+    }
+}
+exports["default"] = Class;
+module.exports = exports["default"];

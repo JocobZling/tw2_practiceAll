@@ -35,7 +35,7 @@ describe("Person", () => {
             const student = new Student(1, "Tom", 21, klass);
             expect(student.name).to.equal("Tom");
             expect(student.age).to.equal(21);
-            expect(student.klass).to.equal(klass);
+            expect(student.className).to.equal(klass);
         });
 
         describe("#introduce", () => {
@@ -49,7 +49,7 @@ describe("Person", () => {
             it("should print Leader role, given student is leader", () => {
                 const klass = new Class(2);
                 const student = new Student(1, "Tom", 21, klass);
-
+                klass.appendMember(student);
                 klass.assignLeader(student);
                 const introduce = student.introduce();
 
@@ -69,7 +69,7 @@ describe("Person", () => {
             const teacher = new Teacher(1, "Tom", 21, klass);
             expect(teacher.name).to.equal("Tom");
             expect(teacher.age).to.equal(21);
-            expect(teacher.klass).to.equal(klass);
+            expect(teacher.className).to.equal(klass);
         });
 
         describe("#introduce", () => {
@@ -117,7 +117,7 @@ describe("Class", () => {
         it("should assign student as Leader, given student is class member", () => {
             const klass = new Class(2);
             const student = new Student(1, "Jerry", 21, klass);
-
+            klass.appendMember(student);
             klass.assignLeader(student);
             expect(klass.leader).to.equal(student);
          });
@@ -126,7 +126,7 @@ describe("Class", () => {
             const klass = new Class(2);
             const otherKlass = new Class(3);
             const student = new Student(1, "Jerry", 21, otherKlass);
-
+            //klass.appendMember(student);
             klass.assignLeader(student);
 
             expect(klass.leader).not.equal(student);
@@ -152,11 +152,11 @@ describe("Class", () => {
 
             const student = new Student(1, "Jerry", 21, otherKlass);
 
-            expect(student.klass).to.equal(otherKlass);
+            expect(student.className).to.equal(otherKlass);
 
             klass.appendMember(student);
 
-            expect(student.klass).to.equal(klass);
+            expect(student.className).to.equal(klass);
         });
     });
 });
