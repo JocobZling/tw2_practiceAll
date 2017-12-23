@@ -25,7 +25,5 @@ class Teacher extends Person{
       return res;
     }
 }
-
-exports["default"] = Teacher;
-module.exports = exports["default"];
+module.exports = Teacher;
 

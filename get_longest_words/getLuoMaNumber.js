@@ -8,6 +8,7 @@ const map = new Map([
     ['D', 500],
     ['M', 1000]
 ]);
+
 function getLuoMaNumber(string) {
     let s = string.split("");
     let num = new Map();
@@ -23,22 +24,23 @@ function getLuoMaNumber(string) {
             //console.log(i);
         }
     }
-    let weishu=0;
+    let weishu = 0;
     for (let item of num.keys()) {
         if (num.get(item) === max) {
-            weishu=item;
+            weishu = item;
             //console.log(item);
         }
     }
-    let aNum=max;
-    for(let i=0;i<weishu;i++){
-        aNum-=num.get(i);
+    let aNum = max;
+    for (let i = 0; i < weishu; i++) {
+        aNum -= num.get(i);
     }
-    for(let i=weishu+1;i<s.length;i++){
-        aNum+=num.get(i);
+    for (let i = weishu + 1; i < s.length; i++) {
+        aNum += num.get(i);
     }
     //console.log(aNum);
     return aNum;
 }
+
 let a = getLuoMaNumber("IV");
 console.log(a);

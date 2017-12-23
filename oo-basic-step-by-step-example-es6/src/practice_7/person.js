@@ -9,5 +9,4 @@ class Person {
         return `My name is ${this.name}. I am ${this.age} years old.`;
     }
 }
-exports["default"] = Person;
-module.exports = exports["default"];
+module.exports = Person;

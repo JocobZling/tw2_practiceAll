@@ -24,5 +24,5 @@ function numSum(n) {
     }
     return sum;
 }
-let a = isHappy(19);
+let a = isHappy(301);
 console.log(a);

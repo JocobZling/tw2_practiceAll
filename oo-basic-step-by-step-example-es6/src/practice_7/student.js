@@ -11,8 +11,7 @@ class Student extends Person{
         return `${personStr} I am a Student. I am at Class ${this.className.number}.`;
     }
 }
-exports["default"] = Student;
-module.exports = exports["default"];
+module.exports =Student;
 
 
 

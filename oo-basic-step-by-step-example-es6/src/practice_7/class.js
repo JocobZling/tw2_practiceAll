@@ -7,5 +7,4 @@ class Class{
         return `Class ${this.number}`;
     }
 }
-exports["default"] = Class;
-module.exports = exports["default"];
+module.exports = Class;
