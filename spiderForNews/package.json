@@ -1,0 +1,11 @@
+{
+  "name": "spiderForNews",
+  "version": "0.0.1",
+  "private": false,
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "iconv-lite": "^0.4.18",
+    "request": "^2.81.0",
+    "sync-request": "^4.1.0"
+  }
+}
